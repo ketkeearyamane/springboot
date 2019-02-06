@@ -1,0 +1,23 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Products Page</title>
+</head>
+<body>
+<span th:if="${successMsg!=null}">
+    <span th:text="${successMsg}"></span>
+</span>
+<form action="#" th:action="@{/update/{id}(id=${product.id})}" th:object="${product}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name" value="${product.name}">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br/>
+    <label for="price">Price</label>
+    <input type="text" th:field="*{price}" id="price" placeholder="Price" value="${product.price}">
+    <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
+    <input type="submit" value="Update User">
+</form>
+</body>
