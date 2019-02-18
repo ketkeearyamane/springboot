@@ -1,6 +1,7 @@
 package com.test.spring;
 
 import com.test.repository.ProductRepository;
+import com.test.repository.TestRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -17,9 +18,14 @@ public class MainController {
 
     @GetMapping("/home")
     public String homePage(Model model) {
+        testRepo.test();
         model.addAttribute("appName", appName);
         return "home";
     }
+
+    @Autowired
+    private TestRepo testRepo;
+
 
     @Autowired
     private ProductRepository productRepository;

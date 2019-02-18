@@ -1,0 +1,37 @@
+spring:
+  thymeleaf:
+    cache: false
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html
+  application:
+    name: Bootstrap Spring Boot
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        web-allow-others: true
+  datasource:
+      ketkee:
+        driver-class-name: org.h2.Driver
+        jdbc-url: jdbc:h2:file:~/apps
+        username: sa
+        password:
+      vinay:
+        driver-class-name: org.h2.Driver
+        jdbc-url: jdbc:h2:file:~/test
+        username: sa
+        password:
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+datasource:
+  flyway:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:~/apps
+    username: sab
+    password:
+    baseline-on-migrate: true
