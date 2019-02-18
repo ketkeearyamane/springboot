@@ -13,10 +13,16 @@ spring:
       settings:
         web-allow-others: true
   datasource:
-      driver-class-name: org.h2.Driver
-      url: jdbc:h2:file:~/apps
-      username: sa
-      password:
+      ketkee:
+        driver-class-name: org.h2.Driver
+        jdbc-url: jdbc:h2:file:~/apps
+        username: sa
+        password:
+      vinay:
+        driver-class-name: org.h2.Driver
+        jdbc-url: jdbc:h2:file:~/test
+        username: sa
+        password:
 
   jpa:
     hibernate:
@@ -29,4 +35,3 @@ datasource:
     username: sab
     password:
     baseline-on-migrate: true
-
